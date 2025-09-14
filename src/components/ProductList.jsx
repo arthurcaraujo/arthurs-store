@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { CartContext } from "../context/CartContext";
+import { useContext, useEffect, useState } from "react";
 
 export default function ProductList() {
     const [products, setProducts] = useState([]);
+    const { addToCart } = useContext(CartContext);
 
     useEffect(() => {
         fetch("https://fakestoreapi.com/products")
@@ -22,6 +24,13 @@ export default function ProductList() {
                         {product.title}
                     </h2>
                     <p>${product.price}</p>
+                    <button
+                        className="bg-blue-500 mt-2 px-4
+                            py-2 rounded text-white"
+                        onClick={() => addToCart(product)}
+                    >
+                        Add to cart
+                    </button>
                 </div>
             ))}
         </div>
