@@ -1,3 +1,4 @@
+import { AuthProvider } from "./context/AuthContext";
 import { CartProvider } from "./context/CartContext";
 import { Route, Routes } from "react-router-dom";
 import Cart from "./pages/Cart";
@@ -9,17 +10,19 @@ import ProductDetails from "./pages/ProductDetails";
 
 export default function App() {
     return (
-        <CartProvider>
-            <Header />
-            <main className="bg-gray-100 min-h-screen">
-                <Routes>
-                    <Route element={<Home />} path="/" />
-                    <Route element={<Cart />} path="/cart" />
-                    <Route element={<Checkout />} path="/checkout" />
-                    <Route element={<Login />} path="/login" />
-                    <Route element={<ProductDetails />} path="/product/:id" />
-                </Routes>
-            </main>
-        </CartProvider>
+        <AuthProvider>
+            <CartProvider>
+                <Header />
+                <main className="bg-gray-100 min-h-screen">
+                    <Routes>
+                        <Route element={<Home />} path="/" />
+                        <Route element={<Cart />} path="/cart" />
+                        <Route element={<Checkout />} path="/checkout" />
+                        <Route element={<Login />} path="/login" />
+                        <Route element={<ProductDetails />} path="/product/:id" />
+                    </Routes>
+                </main>
+            </CartProvider>
+        </AuthProvider>
     )
 }
