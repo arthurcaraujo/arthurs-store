@@ -10,7 +10,7 @@ export default function Login() {
             <input
                 className="border mb-2 p-2 w-full"
                 onChange={e => setEmail(e.target.value)}
-                placeholder="Enter you email address"
+                placeholder="Enter your email address"
                 type="email"
                 value={email}
             />
