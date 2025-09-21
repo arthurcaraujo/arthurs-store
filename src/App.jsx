@@ -15,39 +15,41 @@ export default function App() {
     return (
         <AuthProvider>
             <CartProvider>
-                <Header />
-                <main className="bg-gray-100 min-h-screen">
-                    <Routes>
-                        <Route element={<Home />} path="/" />
-                        <Route element={<Cart />} path="/cart" />
-                        <Route
-                            element={
-                                <ProtectedRoute>
-                                    <Checkout />
-                                </ProtectedRoute>
-                            }
-                            path="/checkout"
-                        />
-                        <Route element={<Login />} path="/login" />
-                        <Route
-                            element={
-                                <ProtectedRoute>
-                                    <OrderConfirmation />
-                                </ProtectedRoute>
-                            }
-                            path="/confirmation"
-                        />
-                        <Route
-                            element={
-                                <ProtectedRoute>
-                                    <Orders />
-                                </ProtectedRoute>
-                            }
-                            path="/orders"
-                        />
-                        <Route element={<ProductDetails />} path="/product/:id" />
-                    </Routes>
-                </main>
+                <div className="bg-gray-100 font-sans min-h-screen">
+                    <Header />
+                    <main className="max-w-6xl mx-auto px-4 py-6">
+                        <Routes>
+                            <Route element={<Home />} path="/" />
+                            <Route element={<Cart />} path="/cart" />
+                            <Route
+                                element={
+                                    <ProtectedRoute>
+                                        <Checkout />
+                                    </ProtectedRoute>
+                                }
+                                path="/checkout"
+                            />
+                            <Route element={<Login />} path="/login" />
+                            <Route
+                                element={
+                                    <ProtectedRoute>
+                                        <OrderConfirmation />
+                                    </ProtectedRoute>
+                                }
+                                path="/confirmation"
+                            />
+                            <Route
+                                element={
+                                    <ProtectedRoute>
+                                        <Orders />
+                                    </ProtectedRoute>
+                                }
+                                path="/orders"
+                            />
+                            <Route element={<ProductDetails />} path="/product/:id" />
+                        </Routes>
+                    </main>
+                </div>
             </CartProvider>
         </AuthProvider>
     )
