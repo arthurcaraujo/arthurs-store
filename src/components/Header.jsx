@@ -51,22 +51,25 @@ export default function Header() {
                 </a>
                 <Link className="col-[2_/_3] row-[1_/_3]" to="/">
                     <h1 className="bg-white font-[Asimovian] font-bold leading-none
-                            px-[0.4rem] py-[0.25rem] rounded-xl text-center text-orange-800
+                            px-[0.4rem] py-[0.25rem] rounded-xl text-center text-orange-800 hover:text-red-700
                             [text-shadow:_1px_1px_1px_rgba(0,0,0)] text-2xl whitespace-nowrap lg:text-3xl"
                     >
                         Arthur's <br className="sm:hidden"/>Store
                     </h1>
                 </Link>
                 <Link
-                    className="col-[3_/_4] font-bold row-[2_/_3] text-white
+                    className="col-[3_/_4] font-bold group row-[2_/_3] text-white
                         sm:justify-self-end sm:row-[1_/_2]"
                     to="/cart"
                 >
-                    Cart ({cart.length})
+                    Cart <span className="bg-orange-700 group-hover:bg-red-500 shadow-[1px_1px_3px_#000] p-[0.1rem_0.3rem] rounded-full">
+                            {cart.length}
+                        </span>
                 </Link>
                 {user ?
                     <button
-                        className="bg-red-800 col-[3_/_4] px-[0.65rem] py-1 rounded row-[1_/_2] text-white
+                        className="bg-red-800 hover:bg-orange-700 col-[3_/_4] cursor-pointer
+                            px-[0.65rem] py-[0.25rem] rounded-lg row-[1_/_2] text-white
                             sm:col-[4_/_5] sm:justify-self-end"
                         onClick={logout}
                     >
@@ -74,7 +77,7 @@ export default function Header() {
                     </button>
                     :
                     <Link
-                        className="bg-black col-[3_/_4] leading-none px-[0.65rem] py-[0.5rem]
+                        className="bg-black hover:bg-orange-800 col-[3_/_4] leading-none px-[0.65rem] py-[0.5rem]
                             rounded-lg row-[1_/_2] text-white sm:col-[4_/_5] sm:justify-self-end"
                         to="/login"
                     >
