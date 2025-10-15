@@ -13,23 +13,29 @@ export default function Home() {
     }, []);
 
     return (
-        <article className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+        <article className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {products.map(product => (
-                <div key={product.id} className="border p-4 rounded shadow">
+                <div
+                    className="border border-gray-300 duration-300 p-4
+                        rounded-xl shadow-md hover:shadow-xl transition"
+                    key={product.id}
+                >
                     <Link to={`/product/${product.id}`}>
                         <img
                             alt={product.title}
                             className="h-40 mx-auto"
                             src={product.image}
                         />
-                        <h2 className="font-bold text-lg">
+                        <h2 className="font-bold line-clamp-2 text-gray-800 text-lg">
                             {product.title}
                         </h2>
-                        <p>${product.price}</p>
+                        <p className="font-bold mt-2 text-blue-700">
+                            ${product.price}
+                        </p>
                     </Link>
                     <button
-                        className="bg-blue-500 mt-2 px-4
-                            py-2 rounded text-white"
+                        className="bg-blue-500 hover:bg-blue-600 cursor-pointer
+                            mt-2 px-4 py-2 rounded-lg text-md text-white"
                         onClick={() => addToCart(product)}
                     >
                         Add to cart
