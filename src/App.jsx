@@ -17,7 +17,7 @@ export default function App() {
             <CartProvider>
                 <div className="bg-gray-100 font-sans min-h-screen">
                     <Header />
-                    <main className="max-w-6xl mx-auto px-4 py-6">
+                    <main className="max-w-[75rem] mx-auto px-[0.5rem] py-6 sm:px-0">
                         <Routes>
                             <Route element={<Home />} path="/" />
                             <Route element={<Cart />} path="/cart" />

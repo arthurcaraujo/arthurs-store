@@ -85,7 +85,10 @@ export default function Header() {
                     </Link>
                 }
             </nav>
-            <p className="mx-[0.5rem] pt-[5rem] sm:mx-auto sm:w-[36rem] md:w-[45rem] lg:w-[60rem] xl:w-[75rem]">
+            <p className="mx-[0.5rem] pt-[6rem]
+                sm:mx-auto sm:pt-[5rem] sm:w-[36rem]
+                md:w-[45rem] lg:w-[60rem] xl:w-[75rem]"
+            >
                 Welcome{user &&
                     <span>, <Link className="active:text-red-700 font-bold hover:underline" to="/orders">{username}</Link></span>
                 }!

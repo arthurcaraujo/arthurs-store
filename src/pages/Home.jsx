@@ -13,7 +13,13 @@ export default function Home() {
     }, []);
 
     return (
-        <article className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <article
+            className="gap-[1rem] grid grid-cols-1
+                sm:grid-cols-[17.5rem_17.5rem] sm:justify-center
+                md:grid-cols-[22rem_22rem]
+                lg:gap-[1.5rem] lg:grid-cols-[19rem_19rem_19rem]
+                xl:grid-cols-[24rem_24rem_24rem]"
+        >
             {products.map(product => (
                 <div
                     className="border border-gray-300 duration-300 p-4
