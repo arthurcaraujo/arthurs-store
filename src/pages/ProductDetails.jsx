@@ -16,23 +16,39 @@ export default function ProductDetails() {
     if (!product) return <p>Loading...</p>
 
     return (
-        <article className="p-4">
-            <img
-                alt={product.title}
-                className="h-60 mx-auto"
-                src={product.image}
-            />
-            <h2 className="text-2xl font-bold mt-4">
+        <article className="grid grid-cols-1 items-center
+            sm:grid-cols-[36rem] sm:justify-center
+            md:gap-x-[1rem] md:grid-cols-[22rem_22rem] md:grid-rows-[auto_auto_auto_auto_auto_auto_auto]
+            lg:gap-x-[2rem] lg:grid-cols-[26rem_32rem]
+            xl:gap-x-[4rem] xl:grid-cols-[29rem_42rem]"
+        >
+            <div className="bg-white border border-gray-200 col-[1_/_2] h-60 p-[1rem] rounded-xl
+                md:h-auto md:rounded-2xl md:row-[1_/_7] md:w-[100%]
+                lg:p-[2rem] lg:rounded-3xl xl:p-[3rem] xl:rounded-4xl"
+            >
+                <img
+                    alt={product.title}
+                    className="max-h-[100%] mx-auto object-contain"
+                    src={product.image}
+                />
+            </div>
+            <h2 className="text-2xl font-bold mt-4 text-gray-800
+                    md:col-[2_/_3] md:row-[1_/_2]"
+            >
                 {product.title}
             </h2>
-            <p className="mt-2">
+            <p className="font-semibold mt-2 text-blue-600 text-lg
+                    md:col-[2_/_3] md:row-[2_/_3]"
+            >
                 ${product.price}
             </p>
-            <p className="mt-2">
+            <p className="mt-2 md:col-[2_/_3] md:row-[3_/_4]">
                 {product.description}
             </p>
             <button
-                className="bg-blue-500 text-white px-4 py-2 mt-4"
+                className="bg-blue-500 hover:bg-blue-600 cursor-pointer
+                    text-white px-4 py-2 mt-4 rounded-lg
+                    md:col-[2_/_3] md:row-[4_/_5]"
                 onClick={()=>addToCart(product)}
             >
                 Add to Cart
