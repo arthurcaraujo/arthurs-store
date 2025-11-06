@@ -3,6 +3,7 @@ import { CartProvider } from "./context/CartContext";
 import { Route, Routes } from "react-router-dom";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Header from "./components/Header";
@@ -15,7 +16,9 @@ export default function App() {
     return (
         <AuthProvider>
             <CartProvider>
-                <div className="bg-gray-100 font-sans min-h-screen">
+                <div className="bg-gray-100 font-sans grid grid-cols-[minmax(0, 1fr)]
+                    grid-rows-[auto_1fr_auto] min-h-[100dvh]"
+                >
                     <Header />
                     <main className="max-w-[75rem] mx-auto px-[0.5rem] py-6 sm:px-0">
                         <Routes>
@@ -49,6 +52,7 @@ export default function App() {
                             <Route element={<ProductDetails />} path="/product/:id" />
                         </Routes>
                     </main>
+                    <Footer />
                 </div>
             </CartProvider>
         </AuthProvider>
