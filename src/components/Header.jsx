@@ -9,6 +9,11 @@ export default function Header() {
     const { user, logout } = useContext(AuthContext);
     const [username, setUsername] = useState(null);
 
+    const logOutUser = () => {
+        let confirmation = confirm("Are you sure you want to log out?");
+        confirmation && logout();
+    }
+
     useEffect(() => {
         if (user) {
             const atIndex = user.email.indexOf("@");
@@ -71,7 +76,7 @@ export default function Header() {
                         className="bg-red-800 hover:bg-orange-700 col-[3_/_4] cursor-pointer
                             px-[0.65rem] py-[0.25rem] rounded-lg row-[1_/_2] text-white
                             sm:col-[4_/_5] sm:justify-self-end"
-                        onClick={logout}
+                        onClick={logOutUser}
                     >
                         Logout
                     </button>
