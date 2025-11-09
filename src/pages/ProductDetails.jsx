@@ -48,7 +48,7 @@ export default function ProductDetails() {
             <p className="font-semibold mt-2 text-blue-600 text-lg
                     md:col-[2_/_3] md:row-[3_/_4]"
             >
-                ${product.price}
+                ${product.price.toFixed(2)}
             </p>
             <p className="mt-2 md:col-[2_/_3] md:row-[4_/_5]">
                 {product.description}

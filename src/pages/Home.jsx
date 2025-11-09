@@ -36,7 +36,7 @@ export default function Home() {
                             {product.title}
                         </h2>
                         <p className="font-bold mt-2 text-blue-700">
-                            ${product.price}
+                            ${product.price.toFixed(2)}
                         </p>
                     </Link>
                     <button
